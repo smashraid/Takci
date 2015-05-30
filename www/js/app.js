@@ -138,15 +138,19 @@ angular.module('starter', ['ionic', 'ngCordova'])
     $scope.user = {
         Firstname: '',
         Lastname: '',
+        Document: '',
         Username: '',
         Password: '',
         Email: '',
         Phone: '',
-        Address: ''
+        Address: '',
+        Facebook: '',
+        Twitter:''
     };
     $scope.friend = {
         Firstname: '',
         Lastname: '',
+        Document: '',
         Email: '',
         Phone: '',
         Address: ''
@@ -285,9 +289,12 @@ angular.module('starter', ['ionic', 'ngCordova'])
     $scope.vehicle = {
         Plate: ''
     };
+    $scope.search = undefined;
     $scope.submit = function(){
       if ($scope.vehicle.Plate !== '') {
-
+        $scope.search = _.find(drivers, function(d) {
+                          return d.Vehicle.Plate === $scope.vehicle.Plate;
+                        });
       }
     };
 })
@@ -325,10 +332,11 @@ angular.module('starter', ['ionic', 'ngCordova'])
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: myLatlng
       }
-      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);     
+
       directionsDisplay.setMap(map);
       var request = {
-        origin:new google.maps.LatLng(-12.07949, -77.0942021),
+        origin: myLatlng, //new google.maps.LatLng(-12.07949, -77.0942021),
         destination:new google.maps.LatLng(-11.922494, -77.051565),
         travelMode: google.maps.TravelMode.DRIVING
       };
