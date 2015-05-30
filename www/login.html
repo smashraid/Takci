@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+      <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="js/lodash.js"></script>
+    <!-- google maps javascript -->
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+<body data-ng-app="starter" data-ng-controller="login">
+  <div class="bar bar-header bar-energized">
+    <button class="button button-icon icon ion-person-add" data-ng-click="goNew()"></button>
+  <h1 class="title">Iniciar Sesion</h1>
+  <button class="button button-icon icon ion-help-circled"></button>
+</div>
+<div class="content has-header padding">
+          <form>
+            <div class="list">
+              <label class="item item-input">
+                <span class="input-label">Usuario</span>
+                <input type="text" name="username" data-ng-model="user.Username" />
+              </label>
+              <label class="item item-input">
+                <span class="input-label">Contraseña</span>
+                <input type="password" name="password" data-ng-model="user.Password" />
+              </label>
+            </div>
+            <div class="padding">
+              <button type="submit" class="button button-block button-dark">Iniciar Sesion</button>
+            </div>
+
+          </form>
+        </div>
+        <div class="row padding">
+          <div class="col">
+            <a href="#/register">Nuevo Usuario</a>
+          </div>
+          <div class="col">
+            <a href="#/forgot-password">Recordar Contraseña</a>
+          </div>
+        </div>
+</body>
+</html>
