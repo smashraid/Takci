@@ -23,3 +23,10 @@
 .feature-bad {
   color: #E42012;
 }
+.icon-large{
+  font-size: 32px;
+}
+.error{
+  text-align: center;
+  color: red;
+}

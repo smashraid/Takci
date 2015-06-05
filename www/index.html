@@ -46,11 +46,11 @@
       <ion-tab title="Ubicacion" icon="ion-map" href="#/tab/geolocation">
         <ion-nav-view name="geolocation-tab"></ion-nav-view>
       </ion-tab>
-      <ion-tab title="Notificacion" icon="ion-email" ui-sref="tabs.contact">
-        <ion-nav-view name="contact-tab"></ion-nav-view>
+      <ion-tab title="Notificacion" icon="ion-email" ui-sref="tabs.notification">
+        <ion-nav-view name="notification-tab"></ion-nav-view>
       </ion-tab>
-      <ion-tab title="Cuenta" icon="ion-gear-b" ui-sref="tabs.contact">
-        <ion-nav-view name="contact-tab"></ion-nav-view>
+      <ion-tab title="Cuenta" icon="ion-gear-b" ui-sref="tabs.account">
+        <ion-nav-view name="account-tab"></ion-nav-view>
       </ion-tab>
     </ion-tabs>
   </script>
@@ -58,6 +58,9 @@
     <ion-view view-title="Iniciar Sesion">
       <ion-content class="padding">
         <form data-ng-submit="submit()">
+        <div class="item" ng-show="error">
+          <span data-ng-bind="error" class="error"></span>
+        </div>
           <div class="list">
             <label class="item item-input">
               <span class="input-label">Usuario</span>
@@ -107,7 +110,11 @@
             </label>
             <label class="item item-input">
               <span class="input-label">Documento</span>
-              <input type="text" name="documento" data-ng-model="user.Documento" required="required" maxlength="8" />
+              <input type="text" name="documento" data-ng-model="user.Document" required="required" maxlength="8" />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Fecha de Nacimiento</span>
+              <input type="date" name="birthday" data-ng-model="user.Birthday" />
             </label>
             <label class="item item-input">
               <span class="input-label">Correo</span>
@@ -147,6 +154,7 @@
   </script>
   <script id="templates/home.html" type="text/ng-template">
     <ion-view view-title="Inicio">
+      <!--
       <ion-nav-buttons side="left">
         <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
       </ion-nav-buttons>
@@ -155,10 +163,53 @@
           Reorder
         </button>
       </ion-nav-buttons>
+      -->
+      <ion-nav-buttons side="right">
+        <button class="button button-dark" data-ng-click="exit()">
+          Salir
+        </button>
+      </ion-nav-buttons>
       <ion-content class="padding">
-        <p>
-          {{user.Username}}
-        </p>
+        <h2>
+          Bienvenido {{user.User.Firstname}} {{user.User.Lastname}}
+        </h2>
+        <div class="row">
+          <div class="col">
+            <i class="ion ion-navigate icon-large"></i>
+          </div>
+          <div class="col col-75">
+            <p>
+              San Miguel - La Molina
+            </p>
+            <p>
+              Surco - San Borja
+            </p>
+            <p>
+              La Victoria - San Martin de Porres
+            </p>
+          </div>
+        </div>
+        <div class="row">
+        <div class="col">
+          <i class="ion ion-information icon-large"></i>
+        </div>
+          <div class="col col-75">
+            <p>
+              No existen promociones actualmente.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+          <i class="ion ion-cash icon-large"></i>
+          </div>
+          <div class="col col-75">
+          <p>
+            Tienes 150 Takci puntos.
+          </p>
+          </div>
+        </div>
+        <!--
         <p>
           <a class="button icon icon-right ion-chevron-right" href="#/tab/facts">Scientific Facts</a>
         </p>
@@ -178,6 +229,7 @@
             </ion-item>
           </ion-list>
         </p>
+        -->
       </ion-content>
     </ion-view>
   </script>
@@ -220,7 +272,7 @@
                 <a href="tel:{{search.Driver.Phone}}">{{search.Driver.Phone}}</a>
               </p>
               <p>
-              {{search.Driver.Rate}} <i class="ion-star"></i>
+                {{search.Driver.Rate}} <i class="ion-star"></i>
               </p>
             </li>
             <li class="item item-divider">
@@ -229,13 +281,13 @@
             <li class="item item-thumbnail-left">
               <img src="{{search.Vehicle.Image}}" alt="driver" />
               <h2>
-              {{search.Vehicle.Make}} {{search.Vehicle.Model}} {{search.Vehicle.Year}}
+                {{search.Vehicle.Make}} {{search.Vehicle.Model}} {{search.Vehicle.Year}}
               </h2>
               <p>
-              <i class="icon ion-stop" data-ng-style="{color: search.Vehicle.Color}"></i>
+                <i class="icon ion-stop" data-ng-style="{color: search.Vehicle.Color}"></i>
               </p>
               <p>
-              {{search.Vehicle.Plate}}
+                {{search.Vehicle.Plate}}
               </p>
             </li>
             <li class="item item-icon-right">
@@ -244,19 +296,20 @@
             </li>
             <li class="item item-icon-right">
               Revision Tecnica
-              <i class="icon"  data-ng-class="{'ion-checkmark-circled feature-good': search.Vehicle.HasRevision, 'ion-close-circled feature-bad': !search.Vehicle.HasRevision}"></i>
+              <i class="icon" data-ng-class="{'ion-checkmark-circled feature-good': search.Vehicle.HasRevision, 'ion-close-circled feature-bad': !search.Vehicle.HasRevision}"></i>
             </li>
             <li class="item item-icon-right">
               Papeleta
-              <i class="icon"  data-ng-class="{'ion-checkmark-circled feature-good': !search.Vehicle.HasInfraction, 'ion-close-circled feature-bad': search.Vehicle.HasInfraction}"></i>
+              <i class="icon" data-ng-class="{'ion-checkmark-circled feature-good': !search.Vehicle.HasInfraction, 'ion-close-circled feature-bad': search.Vehicle.HasInfraction}"></i>
             </li>
             <li class="item item-icon-right">
               Orden de Captura
-              <i class="icon"  data-ng-class="{'ion-checkmark-circled feature-good': !search.Vehicle.HasCapture, 'ion-close-circled feature-bad': search.Vehicle.HasCapture}"></i>
+              <i class="icon" data-ng-class="{'ion-checkmark-circled feature-good': !search.Vehicle.HasCapture, 'ion-close-circled feature-bad': search.Vehicle.HasCapture}"></i>
             </li>
           </ul>
-
-
+          <div class="list" data-ng-if="search !== undefined">
+          <a href="#/tab/geolocation" class="button button-full button-calm"> Iniciar Servicio</a>
+          </div>
         </form>
 
 
@@ -266,31 +319,27 @@
   </script>
   <script id="templates/geolocation.html" type="text/ng-template">
     <ion-view view-title="Ubicacion">
-      <ion-content class="padding">
+      <ion-content class="padding" data-ng-init="getLocation();">
         <div class="card">
+        <!--
           <div class="item item-divider">
-            Get My Current Location
+            Location
           </div>
           <div class="item">
             <strong>Longitude </strong> &nbsp {{position.coords.longitude}}
           </div>
           <div class="item">
-
             <strong>Latitude </strong> &nbsp {{position.coords.latitude}}
           </div>
-          <div class="item" ng-show="errorMsg">
-            <p>{{errorMsg}}</p>
-          </div>
+          -->
           <div class="item">
-
             <div id="map-canvas"></div>
-
           </div>
         </div>
 
         <div class="padding">
-          <button class="button button-block button-positive" ng-click="getLocation()">
-            Get My Location
+          <button class="button button-block button-positive" ng-click="startTravel()">
+            Iniciar Recorrido
           </button>
         </div>
         <div class="padding">
@@ -446,6 +495,94 @@
         </div>
       </ion-content>
     </ion-view>
+  </script>
+  <script id="templates/notification.html" type="text/ng-template">
+    <ion-view view-title="Notificacion">
+      <ion-content class="padding">
+          <div class="list">
+          <a href="" class="button button-block button-balanced">Boton de Emergencia</a>
+          </div>
+          <ul class="list">
+            <li class="item item-divider">
+              Alertas
+            </li>
+            <li class="item">Alerta 1</li>
+            <li class="item">Alerta 2</li>
+            <li class="item">Alerta 3</li>
+          </ul>
+
+      </ion-content>
+    </ion-view>
+
+  </script>
+  <script id="templates/account.html" type="text/ng-template">
+    <ion-view view-title="Cuenta">
+      <ion-content class="padding">
+          <div class="list">
+          <a href="#/tab/profile" class="button button-block button-balanced">Perfil</a>
+          </div>
+          <div class="list">
+            <a href="#/tab/emergency-contact" class="button button-block button-royal">Contactos de Emergencia</a>
+          </div>
+      </ion-content>
+    </ion-view>
+  </script>
+  <script id="templates/profile.html" type="text/ng-template">
+    <ion-view view-title="Perfil">
+      <ion-content class="padding">
+        <form data-ng-init="init();" data-ng-submit="submit()">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Nombre</span>
+              <input type="text" name="firstname" data-ng-model="user.Firstname" required="required" maxlength="50" />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Apellido</span>
+              <input type="text" name="lastname" data-ng-model="user.Lastname" required="required" maxlength="50" />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Documento</span>
+              <input type="text" name="documento" data-ng-model="user.Document" required="required" maxlength="8" />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Fecha de Nacimiento</span>
+              <input type="date" name="birthday" data-ng-model="user.Birthday" required="required" />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Correo</span>
+              <input type="email" name="email" data-ng-model="user.Email" required="required" maxlength="50" />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Telefono</span>
+              <input type="tel" name="phone" data-ng-model="user.Phone" required="required" maxlength="15" />
+            </label>
+          </div>
+          <div class="padding">
+            <button type="submit" class="button button-block button-dark">Aceptar</button>
+          </div>
+        </form>
+      </ion-content>
+    </ion-view>
+  </script>
+  <script id="templates/emergency-contact.html" type="text/ng-template">
+  <ion-view view-title="Contactos de Emergencia">
+    <ion-content class="padding" data-ng-init="init();">
+    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+      <ion-item ng-repeat="item in friends" item="item" href="#/item/{{friends.Document}}" class="item-remove-animate">
+        {{ item.Lastname }} {{ item.Firstname }}
+        <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
+        </ion-delete-button>
+        <ion-option-button class="button-calm" ng-click="edit(item)">
+          Edit
+        </ion-option-button>
+        <ion-option-button class="button-assertive" ng-click="share(item)">
+          Delete
+        </ion-option-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+    </ion-content>
+  </ion-view>
   </script>
   <script id="forgot-password-message.html" type="text/ng-template">
     <ion-modal-view>
