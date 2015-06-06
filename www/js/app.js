@@ -62,6 +62,24 @@ angular.module('starter', ['ionic', 'ngCordova'])
           }
         }
       })
+      .state('tabs.rate', {
+        url: "/rate",
+        views: {
+          'vehicle-tab': {
+            templateUrl: "templates/rate.html",
+            controller: 'RateTabCtrl'
+          }
+        }
+      })
+      .state('tabs.review', {
+        url: "/review",
+        views: {
+          'vehicle-tab': {
+            templateUrl: "templates/review.html",
+            controller: 'ReviewTabCtrl'
+          }
+        }
+      })
       .state('tabs.geolocation', {
         url: "/geolocation",
         views: {
@@ -407,6 +425,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
   $ionicPlatform.ready(function() {
 
   });
+  $scope.marker;
   $scope.coordinates = [];
   $scope.coordinates2 = [
     {lat: '-12.079405099999999', long: '-77.0943317'},
@@ -458,6 +477,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
       map: map,
       title: 'Inicio'
     });
+    $scope.marker = marker;
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.open(map, marker);
     });
@@ -488,8 +508,8 @@ angular.module('starter', ['ionic', 'ngCordova'])
   };
   $scope.gPolilyne = function() {
     //https://developers.google.com/maps/documentation/utilities/polylineutility
-    var start = $scope.coordinates[0];
-    var rest = _.rest($scope.coordinates);
+    var start = $scope.coordinates2[0];
+    var rest = _.rest($scope.coordinates2);
     var mapOptions = {
       zoom: 15,
       center: new google.maps.LatLng(start.lat, start.long),
@@ -587,7 +607,9 @@ angular.module('starter', ['ionic', 'ngCordova'])
         lat: lat,
         long: long
       });
-      $scope.gPolilyne();
+      //$scope.gPolilyne();
+      var latlng = new google.maps.LatLng(lat, long);
+      $scope.marker.setPosition(latlng);
     });
   console.log(watch);
   //watch.clearWatch();
@@ -715,4 +737,43 @@ angular.module('starter', ['ionic', 'ngCordova'])
     });
     $scope.friends = u.Friends;
   }
+})
+
+.controller('RateTabCtrl', function($scope, $location) {
+  console.log('RateTabCtrl');
+  $scope.rates = rates;
+  $scope.selectedOrigin;
+  $scope.selectedDestination;
+  $scope.loadDestination = function () {
+
+  };
+})
+
+.controller('ReviewTabCtrl', function($scope, $location) {
+  console.log('ReviewTabCtrl');
+  $scope.reviews = {
+    qualityService: 0,
+    driverAttention: 0,
+    vehicleClean: 0,
+    goodPresence: 0,
+    recomend: false
+  };
+  $scope.setRate = function (item, index) {
+    switch (item) {
+      case 'qualityService':
+      $scope.reviews.qualityService = index;
+        break;
+        case 'driverAttention':
+        $scope.reviews.driverAttention = index;
+          break;
+          case 'vehicleClean':
+          $scope.reviews.vehicleClean = index;
+            break;
+            case 'goodPresence':
+            $scope.reviews.goodPresence = index;
+              break;
+
+    }
+  };
+
 });
