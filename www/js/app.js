@@ -186,6 +186,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
           u.User.Password === $scope.user.Password;
       });
       if ($scope.search != undefined) {
+		  $scope.error = '';
         window.localStorage['user'] = JSON.stringify($scope.user.Username);
         $location.url('/tab/home');
       } else {
@@ -420,7 +421,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
   };
 })
 
-.controller('GeolocationTabCtrl', function($scope, $ionicPlatform, $cordovaGeolocation) {
+.controller('GeolocationTabCtrl', function($scope, $ionicPopup, $timeout, $ionicPlatform, $cordovaGeolocation, $cordovaNetwork, $cordovaSms, $cordovaSocialSharing) {
   console.log('GeolocationTabCtrl');
   $ionicPlatform.ready(function() {
 
@@ -461,6 +462,64 @@ angular.module('starter', ['ionic', 'ngCordova'])
     {lat: '-12.08843', long: '-77.05074'}
   ];
   $scope.map;
+  $scope.type = '';//$cordovaNetwork.getNetwork();
+    $scope.isOnline = ''; //$cordovaNetwork.isOnline();
+    $scope.isOffline = ''; //$cordovaNetwork.isOffline();
+  $scope.response = {};
+  $scope.emergencyContactStatus = function(){
+	  var options = {
+            replaceLineBreaks: false, // true to replace \n by a new line, false by default
+            android: {
+                intent: 'INTENT'  // send SMS with the native android SMS messaging
+                //intent: '' // send SMS without open any other app
+            }
+        };
+		
+		var alertPopup = $ionicPopup.alert({
+			 title: 'Contactos de Emergencia ',
+			 template: 'Tus contactos fueron notificados'
+		   });
+		   alertPopup.then(function(res) {		  
+			 console.log('Thank you for not eating my delicious ice cream cone');
+		   });
+		
+	  $cordovaSms
+      .send('987403833', 'SMS content', options)
+      .then(function() {
+			// Success! SMS was sent
+			alert('success');
+      }, function(error) {
+        // An error occurred
+		 $scope.response = error;
+      });
+  };
+  
+  $scope.emergencyContactStatus2 = function(){
+	  $cordovaSocialSharing
+    .shareViaSMS('Hello Saulo', '987403833')
+    .then(function(result) {
+      // Success!
+	  alert('success2');
+	  $scope.response = result;
+    }, function(err) {
+      // An error occurred. Show a message to the user
+	  $scope.response = err;
+    });
+  };
+  
+  $scope.emergencyContactStatus3 = function(){
+      $cordovaSocialSharing
+    .shareViaWhatsApp('Hello Saulo', 'http://nolanlawson.github.io/brooklyn-js-html5-mobile-apps/img/framework_ionic.jpg', 'http://ngcordova.com')
+    .then(function(result) {
+      // Success!
+      alert('success3');
+      $scope.response = result;
+    }, function(err) {
+      // An error occurred. Show a message to the user
+      $scope.response = err;
+    });
+  };
+  
   $scope.gMap = function(position) {
     var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     var mapOptions = {
@@ -609,6 +668,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
       });
       //$scope.gPolilyne();
       var latlng = new google.maps.LatLng(lat, long);
+      //var latlng = new google.maps.LatLng('-12.07820', '-77.08494');
       $scope.marker.setPosition(latlng);
     });
   console.log(watch);
