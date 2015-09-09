@@ -3,24 +3,28 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <title></title>
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="lib/leaflet/dist/leaflet.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
       <link href="css/ionic.app.css" rel="stylesheet">
     -->
   <!-- ionic/angularjs js -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/leaflet/dist/leaflet-src.js"></script>
+  <script src="lib/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
 
   <!-- cordova script (this will be a 404 during development) -->
   <script src="lib/ngCordova/dist/ng-cordova.js"></script>
   <script src="cordova.js"></script>
   <script src="js/lodash.js"></script>
-  <!-- google maps javascript
-    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
+  <!-- google maps javascript    
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
   -->
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Z6JrTdB9oPKuOi_b_S1Iux7O9xCZkG0&sensor=true"></script>
 
   <!-- your app's js -->
   <script src="js/data.js"></script>
@@ -347,11 +351,19 @@
           <div class="item">
             <strong>Latitude </strong> &nbsp {{position.coords.latitude}}
           </div>
+		  <div class="item">
+            <h1>Test</h1>
+			<pre>{{map2 | json}}</pre>
+          </div>
           -->
           <div class="item">
             <div id="map-canvas"></div>
-          </div>
+          </div>		  
+		  <div class="item">
+		  <leaflet defaults="map2.defaults" center="map2.center" markers="map2.markers" width="100%" height="480px"></leaflet>
+		  </div>
         </div>
+		<div class="padding">{{errorMsg | json}}</div>
 			  <div class="padding">
 			{{ type }}
 			{{isOnline}}

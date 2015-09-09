@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ngCordova'])
+angular.module('starter', ['ionic', 'ngCordova','leaflet-directive'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -426,6 +426,54 @@ angular.module('starter', ['ionic', 'ngCordova'])
   $ionicPlatform.ready(function() {
 
   });
+  $scope.map2 = {
+          defaults: {
+            tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+            maxZoom: 18,
+            zoomControlPosition: 'bottomleft'
+          },
+		  layers: {
+            baselayers: {
+                googleTerrain: {
+                    name: 'Google Terrain',
+                    layerType: 'TERRAIN',
+                    type: 'google'
+                },
+                googleHybrid: {
+                    name: 'Google Hybrid',
+                    layerType: 'HYBRID',
+                    type: 'google'
+                },
+                googleRoadmap: {
+                    name: 'Google Streets',
+                    layerType: 'ROADMAP',
+                    type: 'google'
+                }
+            }
+        },
+          markers : {
+			  //mainMarker:{
+                //lat: 51.505,
+                //lng: -0.09,
+                //focus: true,
+                //message: "Hey, drag me if you want",
+                //draggable: true
+            //}
+		  },
+          events: {
+            map: {
+              enable: ['context'],
+              logic: 'emit'
+            }
+          },
+		  center: {
+        lat: 51.505,
+        lng: -0.09,
+        zoom: 8
+    }
+
+        };
+  
   $scope.marker;
   $scope.coordinates = [];
   $scope.coordinates2 = [
@@ -462,9 +510,9 @@ angular.module('starter', ['ionic', 'ngCordova'])
     {lat: '-12.08843', long: '-77.05074'}
   ];
   $scope.map;
-  $scope.type = '';//$cordovaNetwork.getNetwork();
-    $scope.isOnline = ''; //$cordovaNetwork.isOnline();
-    $scope.isOffline = ''; //$cordovaNetwork.isOffline();
+  //$scope.type = $cordovaNetwork.getNetwork();
+  //$scope.isOnline = $cordovaNetwork.isOnline();
+  //$scope.isOffline = $cordovaNetwork.isOffline();
   $scope.response = {};
   $scope.emergencyContactStatus = function(){
 	  var options = {
@@ -521,6 +569,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
   };
   
   $scope.gMap = function(position) {
+	  
     var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     var mapOptions = {
       zoom: 18,
@@ -625,24 +674,66 @@ angular.module('starter', ['ionic', 'ngCordova'])
     flightPath.setMap(map);
 
   };
+  
+  //navigator.geolocation.getCurrentPosition(function (pos) {
+			 // console.log('Got pos', pos);
+			  //$scope.gMap(pos);
+			//}, function (error) {
+			  //alert('Unable to get location: ' + error.message);
+			//});
+  
   $scope.getLocation = function() {
+cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
+    console.log("Location is " + (enabled ? "enabled" : "disabled"));
 
+  
+  
+  
     $cordovaGeolocation
       .getCurrentPosition({
         timeout: 10000,
         enableHighAccuracy: false
       })
       .then(function(position) {
-        console.log("position found");
-        $scope.position = position;
+        console.log("position found");		
+			
+		
+			$scope.map2.center.lat  = position.coords.latitude;
+            $scope.map2.center.lng = position.coords.longitude;
+            $scope.map2.center.zoom = 15;
+
+            $scope.map2.markers.now = {
+              lat:position.coords.latitude,
+              lng:position.coords.longitude,
+              message: "You Are Here",
+              focus: true,
+              draggable: false
+            };
+
+		
+		
+        //$scope.position = position;
+		//alert(position.coords.latitude + '  ' + position.coords.longitude);
         $scope.gMap(position);
         //$scope.gRoute(position);
         // long = position.coords.longitude
         // lat = position.coords.latitude
       }, function(err) {
         console.log("unable to find location");
-        $scope.errorMsg = "Error : " + err.message;
+        $scope.errorMsg = err;
       });
+	  
+	  }, function(error){
+    console.error("The following error occurred: "+error);
+	$scope.errorMsg = err;
+	var alertPopup = $ionicPopup.alert({
+			 title: 'Aviso',
+			 template: 'El sensor del GPS debe de estar encendido'
+		   });
+		   alertPopup.then(function(res) {		  
+			 console.log('Thank you for not eating my delicious ice cream cone');
+		   });
+});
   };
 
   $scope.startTravel = function(){
@@ -658,6 +749,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
     function(err) {
       // error
       console.log(err);
+	  $scope.errorMsg = err;
     },
     function(position) {
       var lat = position.coords.latitude
