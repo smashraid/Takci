@@ -1,0 +1,54 @@
+<ion-view view-title="Nuevo Usuario">
+    <ion-content class="padding">
+        <form data-ng-submit="submit()">
+            <div class="list">
+                <label class="item item-input">
+                    <!--
+                    <span class="input-label">Usuario</span>
+                        -->
+                    <input type="text" name="username" data-ng-model="account.Username" required="required" maxlength="15" placeholder="Usuario" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Contraseña</span>-->
+                    <input type="password" name="password" data-ng-model="account.Password" required="required" maxlength="15" placeholder="Contrase&ntilde;a" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Nombre</span>-->
+                    <input type="text" name="firstname" data-ng-model="user.Firstname" required="required" maxlength="50" placeholder="Nombre" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Apellido</span>-->
+                    <input type="text" name="lastname" data-ng-model="user.Lastname" required="required" maxlength="50" placeholder="Apellido" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Documento</span>-->
+                    <input type="text" name="documento" data-ng-model="user.Document" required="required" maxlength="8" placeholder="Documento" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Fecha de Nacimiento</span>-->
+                    <input type="text" name="birthday" data-ng-model="user.Birthday" placeholder="Fecha de Nacimiento" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Correo</span>-->
+                    <input type="email" name="email" data-ng-model="user.Email" required="required" maxlength="150" placeholder="Correo" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Telefono</span>-->
+                    <input type="tel" name="phone" data-ng-model="user.Phone" required="required" maxlength="15" placeholder="Telefono" />
+                </label>
+                <label class="item item-input">
+                    <!--<span class="input-label">Telefono</span>-->
+                    <textarea name="Address" data-ng-model="user.Address" required="required" maxlength="250" placeholder="Domicilio"> </textarea>                    
+                </label>
+            </div>
+            <div class="padding">
+                <button type="submit" class="button button-block button-dark">Aceptar</button>
+            </div>
+            <!--
+            <div class="padding">
+                {{error | json}}
+            </div>
+                -->
+        </form>
+    </ion-content>
+</ion-view>

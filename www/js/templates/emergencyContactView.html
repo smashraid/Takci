@@ -1,0 +1,25 @@
+<ion-view view-title="Contactos de Emergencia" cache-view="false">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="#/edit-emergency-contact" class="button button-icon icon ion-person-add" data-ng-show="friends.length < 4"></a>
+    </ion-nav-buttons>
+    <ion-content class="padding" data-ng-init="init();">
+        <ion-list>
+            <ion-item ng-repeat="item in friends" item="item" class="item-remove-animate">
+                {{ item.lastname }} {{ item.firstname }}
+                <ion-option-button class="button-calm" ng-click="edit(item)">
+                    Editar
+                </ion-option-button>
+                <ion-option-button class="button-assertive" ng-click="delete(item)">
+                    Eliminar
+                </ion-option-button>
+                <!--
+                <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+                -->
+            </ion-item>
+        </ion-list>
+        <a href="#/tab/home" class="button button-block button-dark">Volver</a>
+    </ion-content>
+</ion-view>

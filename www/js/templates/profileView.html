@@ -1,0 +1,40 @@
+<ion-view view-title="Perfil">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <form data-ng-init="init();" data-ng-submit="submit()">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" name="firstname" data-ng-model="user.firstname" required="required" maxlength="50" placeholder="Nombre" />
+                </label>
+                <label class="item item-input">
+                    <input type="text" name="lastname" data-ng-model="user.lastname" required="required" maxlength="50" placeholder="Apellido" />
+                </label>
+                <label class="item item-input">
+                    <input type="text" name="documento" data-ng-model="user.document" required="required" maxlength="8" placeholder="Documento" />
+                </label>
+                <label class="item item-input">
+                    <input type="text" name="birthday" data-ng-model="user.birthday" placeholder="Fecha de Nacimiento" />
+                </label>
+                <label class="item item-input">
+                    <input type="email" name="email" data-ng-model="user.email" required="required" maxlength="150" placeholder="Correo" />
+                </label>
+                <label class="item item-input">
+                    <input type="tel" name="phone" data-ng-model="user.phone" required="required" maxlength="15" placeholder="Telefono" />
+                </label>
+                <label class="item item-input">
+                    <textarea name="Address" data-ng-model="user.address" required="required" maxlength="250" placeholder="Domicilio"> </textarea>
+                </label>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="button button-block button-dark">Aceptar</button>
+                </div>
+                <div class="col">
+                    <a href="#/tab/home" class="button button-block button-stable">Volver</a>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

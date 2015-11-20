@@ -1,0 +1,30 @@
+<ion-view view-title="Tarifario">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Origen
+                </div>
+                <select data-ng-model="selectedOrigin" data-ng-options="rate.name for rate in rates" data-ng-change="loadDestination()">
+                    <option>SELECCIONAR</option>
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Destino
+                </div>
+                <select data-ng-model="selectedDestination" data-ng-options="destination.name for destination in selectedOrigin.destinations">
+                    <option>SELECCIONAR</option>
+                </select>
+            </label>
+            <div class="item">
+                <label class="pull-right" data-ng-bind="selectedDestination.lowPrice"></label>
+                Tarifa Minima
+            </div>
+            <div class="item">
+                <label class="pull-right" data-ng-bind="selectedDestination.highPrice"></label>
+                Tarifa Maxima
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

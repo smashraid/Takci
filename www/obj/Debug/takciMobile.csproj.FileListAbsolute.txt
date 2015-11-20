@@ -1,0 +1,6 @@
+D:\GitHub\Takci\www\bin\takciMobile.dll.config
+D:\GitHub\Takci\www\bin\takciMobile.dll
+D:\GitHub\Takci\www\bin\takciMobile.pdb
+D:\GitHub\Takci\www\obj\Debug\takciMobile.csprojResolveAssemblyReference.cache
+D:\GitHub\Takci\www\obj\Debug\takciMobile.dll
+D:\GitHub\Takci\www\obj\Debug\takciMobile.pdb

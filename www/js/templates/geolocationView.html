@@ -1,0 +1,91 @@
+<ion-view view-title="Ubicacion">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding" data-ng-init="getLocation();">
+        <!--<div class="card">
+
+              <div class="item item-divider">
+                Location
+              </div>
+              <div class="item">
+                <strong>Longitude </strong> &nbsp {{position.coords.longitude}}
+              </div>
+              <div class="item">
+                <strong>Latitude </strong> &nbsp {{position.coords.latitude}}
+              </div>
+              <div class="item">
+                <h1>Test</h1>
+                <pre>{{map2 | json}}</pre>
+              </div>
+
+            <div class="item">-->
+        <div id="map-canvas" data-tap-disabled="true"></div>
+        <div class="map-button1">
+            <button class="button icon ion-location button-positive" data-ng-click="getLocation()"></button>
+        </div>
+        <div class="map-button2">
+            <button class="button icon ion-flag button-royal" data-ng-click="saveLocation()"></button>
+        </div>
+        <div class="map-button3">
+            <button class="button icon ion-navigate button-balanced" data-ng-click="stopTravel()"></button>
+        </div>
+        <div class="map-button4">
+            <button class="button icon ion-forward button-calm" data-ng-click="share()"></button>
+        </div>
+        <div class="map-button5">
+            <button class="button icon ion-alert-circled button-assertive" data-ng-click="emergency()"></button>
+        </div>
+        <!-- </div>
+
+            <div class="item">
+                <leaflet defaults="mapLeaflet.defaults" center="mapLeaflet.center" markers="mapLeaflet.markers" width="100%" height="480px"></leaflet>
+            </div>
+
+        </div>-->
+        <!--
+        <div class="padding">{{errorMsg | json}}</div>
+        <div class="padding">
+            {{ type }}
+            {{isOnline}}
+            {{isOffline}}
+        </div>
+        <div class="padding">{{response | json}}</div>
+
+        <div class="padding">
+            <button class="button button-full icon-left ion-location button-positive" data-ng-click="getLocation()">
+                Posicion actual
+            </button>
+            <button class="button button-full icon-left ion-flag button-royal" data-ng-click="saveLocation()">
+                Iniciar Recorrido
+            </button>
+            <button class="button button-full icon-left ion-navigate button-balanced" data-ng-click="stopTravel()">
+                Ver Recorrido
+            </button>
+            <button class="button button-full icon-left ion-forward button-calm" data-ng-click="share()">
+                Compartir
+            </button>-->
+         <
+!--
+        <button class="button button-full icon-left ion-paper-airplane button-balanced" data-ng-click="emergencyContactStatus()">
+                Enviar SMS
+            </button>
+            <button class="button button-full icon-left ion-compose" data-ng-click="emergencyContactStatus2()">
+                Enviar SMS 2
+            </button>
+            <button class="button button-full icon-left ion-flag" data-ng-click="emergencyContactStatus3()">
+                Whatsapp
+            </button>
+
+        </div>-->
+        <!--
+        <div class="padding">
+                <ul>
+                    <li data-ng-repeat="coordinate in coordinates">{{coordinate | json}}</li>
+                </ul>
+            </div>
+                -->
+        </i
+        on-con
+    </ion-content>
+</ion-view>

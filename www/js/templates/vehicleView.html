@@ -1,0 +1,84 @@
+<ion-view view-title="Vehiculo">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>        
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="#/tab/rate" class="button button-icon icon ion-document-text"></a>
+        <a href="#/tab/calification/{{search.vehiclePlate}}" class="button button-icon icon ion-star" data-ng-if="search !== undefined"></a>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <form data-ng-submit="submit()">
+            <div class="list">
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input type="search" name="plate" data-ng-model="vehicle.Plate" required="required" placeholder="Placa" />
+                    </label>
+                    <button type="button" class="button button-small button-dark" data-ng-click="submit()">Buscar</button>
+                </div>
+            </div>
+            <ul class="list" data-ng-if="search.ownerFullName !== undefined">
+                <li class="item item-divider">
+                    Propietario
+                </li>
+                <li class="item item-thumbnail-left">
+                    <img src="{{search.ownerImage}}" alt="driver" />
+                    <h2>
+                        <label data-ng-bind="search.ownerFullName"></label>
+                    </h2>
+                    <p>
+                        <label data-ng-bind="search.ownerDocument"></label>
+                    </p>
+                    <p>
+                        <a href="tel:{{search.ownerPhone}}">{{search.ownerPhone}}</a>
+                    </p>
+                    <p>
+                        <label data-ng-bind="search.calification"></label> <i class="ion-star"></i>
+                    </p>
+                </li>
+                <li class="item item-divider">
+                    Vehiculo
+                </li>
+                <li class="item item-thumbnail-left">
+                    <img src="{{search.vehicleImage}}" alt="driver" />
+                    <h2>
+                        <span data-ng-bind="search.vehicleMake"></span>
+                        <span data-ng-bind="search.vehicleModel"></span>
+                        <span data-ng-bind="search.vehicleYear"></span>
+                    </h2>
+                    <p>
+                        <i class="icon ion-stop" data-ng-style="{color: search.vehicleColor}"></i>
+                        <span data-ng-bind="search.vehicleColor"></span>
+                    </p>
+                    <p>
+                        <span data-ng-bind="search.vehiclePlate"></span>
+                    </p>
+                </li>
+                <li class="item item-icon-right">
+                    Soat
+                    <i class="icon" data-ng-class="{'ion-checkmark-circled feature-good': search.hasSoat, 'ion-close-circled feature-bad': !search.hasSoat}"></i>
+                </li>
+                <li class="item item-icon-right">
+                    Revision Tecnica
+                    <i class="icon" data-ng-class="{'ion-checkmark-circled feature-good': search.hasRevision, 'ion-close-circled feature-bad': !search.hasRevision}"></i>
+                </li>
+                <li class="item item-icon-right">
+                    Papeleta
+                    <i class="icon" data-ng-class="{'ion-checkmark-circled feature-good': !search.hasInfraction, 'ion-close-circled feature-bad': search.hasInfraction}"></i>
+                </li>
+                <li class="item item-icon-right">
+                    Orden de Captura
+                    <i class="icon" data-ng-class="{'ion-checkmark-circled feature-good': !search.hasCapture, 'ion-close-circled feature-bad': search.hasCapture}"></i>
+                </li>
+            </ul>
+            <div class="row" data-ng-if="search !== undefined">
+                <div class="col">
+                    <a class="button button-full button-royal" data-ng-click="insertBreach()">Reportar Vehiculo</a>
+                </div>
+                <div class="col">
+                    <a href="#/tab/geolocation/{{search.vehiclePlate}}" class="button button-full button-calm"> Iniciar Servicio</a>
+                </div>
+            </div>            
+        </form>
+    </ion-content>
+</ion-view>

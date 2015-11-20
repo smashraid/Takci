@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{367EDE25-0F64-4D79-8A4C-AACCBB997645}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>takciMobile</RootNamespace>
+    <AssemblyName>takciMobile</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\byd.png" />
+    <Content Include="img\chery.png" />
+    <Content Include="img\faw.png" />
+    <Content Include="img\fiat.png" />
+    <Content Include="img\ford.png" />
+    <Content Include="img\geely.png" />
+    <Content Include="img\greatwall.png" />
+    <Content Include="img\hasma.png" />
+    <Content Include="img\honda.png" />
+    <Content Include="img\jac.png" />
+    <Content Include="img\lifan.png" />
+    <Content Include="img\mitsubishi.png" />
+    <Content Include="img\susuki.png" />
+    <Content Include="img\taxi.png" />
+    <Content Include="index.html.tmp" />
+    <Content Include="js\app.js.tmp" />
+    <Content Include="js\controllers\customerController.js" />
+    <Content Include="js\services\calificationService.js" />
+    <Content Include="js\services\breachService.js" />
+    <Content Include="lib\angular-animate\.bower.json" />
+    <Content Include="lib\angular-animate\angular-animate.min.js.map" />
+    <Content Include="lib\angular-animate\bower.json" />
+    <Content Include="lib\angular-animate\package.json" />
+    <Content Include="lib\angular-animate\README.md" />
+    <Content Include="lib\angular-cookies\angular-cookies.min.js.map" />
+    <Content Include="lib\angular-cookies\bower.json" />
+    <Content Include="lib\angular-cookies\package.json" />
+    <Content Include="lib\angular-cookies\README.md" />
+    <Content Include="lib\angular-leaflet-directive\.bower.json" />
+    <Content Include="lib\angular-leaflet-directive\bower.json" />
+    <Content Include="lib\angular-leaflet-directive\core" />
+    <Content Include="lib\angular-leaflet-directive\dist\angular-leaflet-directive_dev_mapped.js.map" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\dot\all.dot" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\dot\legend.dot" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\dot\modules.dot" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\dot\modules\leaflet-directive.dot" />
+    <Content Include="lib\angular-leaflet-directive\grunt\aliases.yaml" />
+    <Content Include="lib\angular-leaflet-directive\LICENSE" />
+    <Content Include="lib\angular-sanitize\.bower.json" />
+    <Content Include="lib\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="lib\angular-sanitize\bower.json" />
+    <Content Include="lib\angular-sanitize\package.json" />
+    <Content Include="lib\angular-sanitize\README.md" />
+    <Content Include="lib\angular-ui-router\.bower.json" />
+    <Content Include="lib\angular-ui-router\bower.json" />
+    <Content Include="lib\angular-ui-router\CHANGELOG.md" />
+    <Content Include="lib\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="lib\angular-ui-router\LICENSE" />
+    <Content Include="lib\angular-ui-router\README.md" />
+    <Content Include="lib\angular\.bower.json" />
+    <Content Include="lib\angular\angular.min.js.gzip" />
+    <Content Include="lib\angular\angular.min.js.map" />
+    <Content Include="lib\angular\bower.json" />
+    <Content Include="lib\angular\package.json" />
+    <Content Include="lib\angular\README.md" />
+    <Content Include="lib\font-awesome\.bower.json" />
+    <Content Include="lib\font-awesome\.npmignore" />
+    <Content Include="lib\font-awesome\bower.json" />
+    <Content Include="lib\font-awesome\css\font-awesome.css.map" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\font-awesome\less\animated.less" />
+    <Content Include="lib\font-awesome\less\bordered-pulled.less" />
+    <Content Include="lib\font-awesome\less\core.less" />
+    <Content Include="lib\font-awesome\less\fixed-width.less" />
+    <Content Include="lib\font-awesome\less\font-awesome.less" />
+    <Content Include="lib\font-awesome\less\icons.less" />
+    <Content Include="lib\font-awesome\less\larger.less" />
+    <Content Include="lib\font-awesome\less\list.less" />
+    <Content Include="lib\font-awesome\less\mixins.less" />
+    <Content Include="lib\font-awesome\less\path.less" />
+    <Content Include="lib\font-awesome\less\rotated-flipped.less" />
+    <Content Include="lib\font-awesome\less\stacked.less" />
+    <Content Include="lib\font-awesome\less\variables.less" />
+    <Content Include="lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="lib\font-awesome\scss\_animated.scss" />
+    <Content Include="lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="lib\font-awesome\scss\_core.scss" />
+    <Content Include="lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="lib\font-awesome\scss\_icons.scss" />
+    <Content Include="lib\font-awesome\scss\_larger.scss" />
+    <Content Include="lib\font-awesome\scss\_list.scss" />
+    <Content Include="lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="lib\font-awesome\scss\_path.scss" />
+    <Content Include="lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="lib\font-awesome\scss\_variables.scss" />
+    <Content Include="lib\ionic\.bower.json" />
+    <Content Include="lib\ionic\bower.json" />
+    <Content Include="lib\ionic\fonts\ionicons.eot" />
+    <Content Include="lib\ionic\fonts\ionicons.ttf" />
+    <Content Include="lib\ionic\fonts\ionicons.woff" />
+    <Content Include="lib\ionic\README.md" />
+    <Content Include="lib\ionic\scss\ionic.scss" />
+    <Content Include="lib\ionic\scss\ionicons\ionicons.scss" />
+    <Content Include="lib\ionic\scss\ionicons\_ionicons-animation.scss" />
+    <Content Include="lib\ionic\scss\ionicons\_ionicons-font.scss" />
+    <Content Include="lib\ionic\scss\ionicons\_ionicons-icons.scss" />
+    <Content Include="lib\ionic\scss\ionicons\_ionicons-variables.scss" />
+    <Content Include="lib\ionic\scss\_action-sheet.scss" />
+    <Content Include="lib\ionic\scss\_animations.scss" />
+    <Content Include="lib\ionic\scss\_backdrop.scss" />
+    <Content Include="lib\ionic\scss\_badge.scss" />
+    <Content Include="lib\ionic\scss\_bar.scss" />
+    <Content Include="lib\ionic\scss\_button-bar.scss" />
+    <Content Include="lib\ionic\scss\_button.scss" />
+    <Content Include="lib\ionic\scss\_checkbox.scss" />
+    <Content Include="lib\ionic\scss\_form.scss" />
+    <Content Include="lib\ionic\scss\_grid.scss" />
+    <Content Include="lib\ionic\scss\_items.scss" />
+    <Content Include="lib\ionic\scss\_list.scss" />
+    <Content Include="lib\ionic\scss\_loaders.scss" />
+    <Content Include="lib\ionic\scss\_loading.scss" />
+    <Content Include="lib\ionic\scss\_menu.scss" />
+    <Content Include="lib\ionic\scss\_mixins.scss" />
+    <Content Include="lib\ionic\scss\_modal.scss" />
+    <Content Include="lib\ionic\scss\_platform.scss" />
+    <Content Include="lib\ionic\scss\_popover.scss" />
+    <Content Include="lib\ionic\scss\_popup.scss" />
+    <Content Include="lib\ionic\scss\_progress.scss" />
+    <Content Include="lib\ionic\scss\_radio.scss" />
+    <Content Include="lib\ionic\scss\_range.scss" />
+    <Content Include="lib\ionic\scss\_refresher.scss" />
+    <Content Include="lib\ionic\scss\_reset.scss" />
+    <Content Include="lib\ionic\scss\_scaffolding.scss" />
+    <Content Include="lib\ionic\scss\_select.scss" />
+    <Content Include="lib\ionic\scss\_slide-box.scss" />
+    <Content Include="lib\ionic\scss\_spinner.scss" />
+    <Content Include="lib\ionic\scss\_split-pane.scss" />
+    <Content Include="lib\ionic\scss\_tabs.scss" />
+    <Content Include="lib\ionic\scss\_toggle.scss" />
+    <Content Include="lib\ionic\scss\_transitions.scss" />
+    <Content Include="lib\ionic\scss\_type.scss" />
+    <Content Include="lib\ionic\scss\_util.scss" />
+    <Content Include="lib\ionic\scss\_variables.scss" />
+    <Content Include="lib\leaflet\.bower.json" />
+    <Content Include="lib\leaflet\bower.json" />
+    <Content Include="lib\leaflet\CHANGELOG.md" />
+    <Content Include="lib\leaflet\component.json" />
+    <Content Include="lib\leaflet\CONTRIBUTING.md" />
+    <Content Include="lib\leaflet\LICENSE" />
+    <Content Include="lib\leaflet\package.json" />
+    <Content Include="lib\leaflet\PLUGIN-GUIDE.md" />
+    <Content Include="lib\leaflet\README.md" />
+    <Content Include="lib\ngCordova\bower.json" />
+    <Content Include="lib\ngCordova\CHANGELOG.md" />
+    <Content Include="lib\ngCordova\LICENSE" />
+    <Content Include="lib\ngCordova\package.json" />
+    <Content Include="lib\ngCordova\README.md" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\style.css" />
+    <Content Include="forgot-password.html" />
+    <Content Include="img\chevrolet.png" />
+    <Content Include="img\citroen.png" />
+    <Content Include="img\daewoo.png" />
+    <Content Include="img\driver.png" />
+    <Content Include="img\hyundai.png" />
+    <Content Include="img\ionic.png" />
+    <Content Include="img\kia.png" />
+    <Content Include="img\nissan.png" />
+    <Content Include="img\star.png" />
+    <Content Include="img\toyota.png" />
+    <Content Include="img\volkswagen.png" />
+    <Content Include="index.html" />
+    <Content Include="js\app.js" />
+    <Content Include="js\controllers\accountController.js" />
+    <Content Include="js\controllers\calificationController.js" />
+    <Content Include="js\controllers\emergencyContactController.js" />
+    <Content Include="js\controllers\forgotPasswordController.js" />
+    <Content Include="js\controllers\geolocationController.js" />
+    <Content Include="js\controllers\homeController.js" />
+    <Content Include="js\controllers\loginController.js" />
+    <Content Include="js\controllers\notificationController.js" />
+    <Content Include="js\controllers\rateController.js" />
+    <Content Include="js\controllers\registerController.js" />
+    <Content Include="js\controllers\vehicleController.js" />
+    <Content Include="js\data.js" />
+    <Content Include="js\lodash.js" />
+    <Content Include="js\moment.js" />
+    <Content Include="js\services\accountService.js" />
+    <Content Include="js\services\customerService.js" />
+    <Content Include="js\services\emergencyContactService.js" />
+    <Content Include="js\services\infoService.js" />
+    <Content Include="js\services\locationDetailService.js" />
+    <Content Include="js\services\locationService.js" />
+    <Content Include="js\templates\accountView.html" />
+    <Content Include="js\templates\calificationView.html" />
+    <Content Include="js\templates\editEmergencyContactView.html" />
+    <Content Include="js\templates\emergencyContactView.html" />
+    <Content Include="js\templates\forgotPasswordView.html" />
+    <Content Include="js\templates\geolocationView.html" />
+    <Content Include="js\templates\homeView.html" />
+    <Content Include="js\templates\layoutView.html" />
+    <Content Include="js\templates\loginView.html" />
+    <Content Include="js\templates\modal\editContactModal.html" />
+    <Content Include="js\templates\modal\forgotPasswordModal.html" />
+    <Content Include="js\templates\notificationView.html" />
+    <Content Include="js\templates\profileView.html" />
+    <Content Include="js\templates\rateView.html" />
+    <Content Include="js\templates\registerView.html" />
+    <Content Include="js\templates\vehicleView.html" />
+    <Content Include="lib\angular-animate\angular-animate.js" />
+    <Content Include="lib\angular-animate\angular-animate.min.js" />
+    <Content Include="lib\angular-cookies\angular-cookies.js" />
+    <Content Include="lib\angular-cookies\angular-cookies.min.js" />
+    <Content Include="lib\angular-cookies\index.js" />
+    <Content Include="lib\angular-leaflet-directive\dist\angular-leaflet-directive.js" />
+    <Content Include="lib\angular-leaflet-directive\dist\angular-leaflet-directive.min.js" />
+    <Content Include="lib\angular-leaflet-directive\dist\angular-leaflet-directive_dev_mapped.js" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\png\all.png" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\png\legend.png" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\png\modules.png" />
+    <Content Include="lib\angular-leaflet-directive\dist\architecture\png\modules\leaflet-directive.png" />
+    <Content Include="lib\angular-leaflet-directive\generate-examples.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\angular_architecture_graph.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\bower.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\bump.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\changelog.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\clean.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\concat.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\concurrent.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\connect.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\coveralls.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\jshint.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\karma.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\ngAnnotate.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\open.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\pkg.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\protractor.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\shell.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\uglify.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\utils\banner.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\utils\getAvailPort.js" />
+    <Content Include="lib\angular-leaflet-directive\grunt\watch.js" />
+    <Content Include="lib\angular-sanitize\angular-sanitize.js" />
+    <Content Include="lib\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="lib\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="lib\angular-ui-router\release\angular-ui-router.min.js" />
+    <Content Include="lib\angular-ui-router\src\common.js" />
+    <Content Include="lib\angular-ui-router\src\resolve.js" />
+    <Content Include="lib\angular-ui-router\src\state.js" />
+    <Content Include="lib\angular-ui-router\src\stateDirectives.js" />
+    <Content Include="lib\angular-ui-router\src\stateFilters.js" />
+    <Content Include="lib\angular-ui-router\src\templateFactory.js" />
+    <Content Include="lib\angular-ui-router\src\urlMatcherFactory.js" />
+    <Content Include="lib\angular-ui-router\src\urlRouter.js" />
+    <Content Include="lib\angular-ui-router\src\view.js" />
+    <Content Include="lib\angular-ui-router\src\viewDirective.js" />
+    <Content Include="lib\angular-ui-router\src\viewScroll.js" />
+    <Content Include="lib\angular\angular-csp.css" />
+    <Content Include="lib\angular\angular.js" />
+    <Content Include="lib\angular\angular.min.js" />
+    <Content Include="lib\font-awesome\.gitignore" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\ionic\css\ionic.css" />
+    <Content Include="lib\ionic\css\ionic.min.css" />
+    <Content Include="lib\ionic\fonts\ionicons.svg" />
+    <Content Include="lib\ionic\js\ionic-angular.js" />
+    <Content Include="lib\ionic\js\ionic-angular.min.js" />
+    <Content Include="lib\ionic\js\ionic.bundle.js" />
+    <Content Include="lib\ionic\js\ionic.bundle.min.js" />
+    <Content Include="lib\ionic\js\ionic.js" />
+    <Content Include="lib\ionic\js\ionic.min.js" />
+    <Content Include="lib\leaflet\dist\images\layers-2x.png" />
+    <Content Include="lib\leaflet\dist\images\layers.png" />
+    <Content Include="lib\leaflet\dist\images\marker-icon-2x.png" />
+    <Content Include="lib\leaflet\dist\images\marker-icon.png" />
+    <Content Include="lib\leaflet\dist\images\marker-shadow.png" />
+    <Content Include="lib\leaflet\dist\leaflet-src.js" />
+    <Content Include="lib\leaflet\dist\leaflet.css" />
+    <Content Include="lib\leaflet\dist\leaflet.js" />
+    <Content Include="lib\leaflet\Jakefile.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova-mocks.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova-mocks.min.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova.js" />
+    <Content Include="lib\ngCordova\dist\ng-cordova.min.js" />
+    <Content Include="login.html" />
+    <Content Include="register.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="lib\angular-ui-router\api\angular-ui-router.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="js\directives\" />
+    <Folder Include="js\filters\" />
+    <Folder Include="js\models\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2889/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

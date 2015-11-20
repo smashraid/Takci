@@ -1,0 +1,163 @@
+<ion-view view-title="Evaluacion">
+    <ion-content class="padding">
+        <form data-ng-submit="submit()">
+            <div class="list">
+                <div class="item item-divider">
+                    En una escala del 1 al 5 como calificaria
+                </div>
+                <div class="item">
+                    <div class="pull-right">
+                        <input type="radio" name="qualityService" data-ng-model="calification.qualityService" value="5" />
+                        <input type="radio" name="qualityService" data-ng-model="calification.qualityService" value="4" />
+                        <input type="radio" name="qualityService" data-ng-model="calification.qualityService" value="3" />
+                        <input type="radio" name="qualityService" data-ng-model="calification.qualityService" value="2" />
+                        <input type="radio" name="qualityService" data-ng-model="calification.qualityService" value="1" />
+                    </div>
+                    Calidad del servicio
+                    <!--
+                              <label class="item item-radio">
+                                <input type="radio" class="rating-input" id="qualityService1" name="qualityService" data-ng-model="reviews.qualityService" value="5" />
+                                <div class="item-content">
+                                  5
+                                </div>
+                                <i class="radio-icon ion-star"></i>
+                              </label>
+                              <label class="item item-radio">
+                                <input type="radio" name="qualityService" data-ng-model="reviews.qualityService" value="4" />
+                                <div class="item-content">
+                                  4
+                                </div>
+                                <i class="radio-icon ion-star"></i>
+                              </label>
+                              <label class="item item-radio">
+                                <input type="radio" name="qualityService" data-ng-model="reviews.qualityService" value="3" />
+                                <div class="item-content">
+                                  3
+                                </div>
+                                <i class="radio-icon ion-star"></i>
+                              </label>
+                              <label class="item item-radio">
+                                <input type="radio" name="qualityService" data-ng-model="reviews.qualityService" value="2" />
+                                <div class="item-content">
+                                  2
+                                </div>
+                                <i class="radio-icon ion-star"></i>
+                              </label>
+                              <label class="item item-radio">
+                                <input type="radio" name="qualityService" data-ng-model="reviews.qualityService" value="1" />
+                                <div class="item-content">
+                                  1
+                                </div>
+                                <i class="radio-icon ion-star"></i>
+                              </label>
+
+                    <div class="rating">
+                        <input type="radio" class="rating-input" id="qualityService1" name="qualityService" data-ng-model="reviews.qualityService" value="5" />
+                        <label for="qualityService1" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="qualityService2" name="qualityService" data-ng-model="reviews.qualityService" value="4" />
+                        <label for="qualityService2" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="qualityService3" name="qualityService" data-ng-model="reviews.qualityService" value="3" />
+                        <label for="qualityService3" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="qualityService4" name="qualityService" data-ng-model="reviews.qualityService" value="2" />
+                        <label for="qualityService4" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="qualityService5" name="qualityService" data-ng-model="reviews.qualityService" value="1" />
+                        <label for="qualityService5" class="rating-star"></label>
+                    </div>-->
+                </div>
+                <div class="item">
+                    <!--
+                    <div class="input-label">
+                        Trato del conductor
+                    </div>
+                    <div class="rating">
+                        <input type="radio" class="rating-input" id="driverAttention1" name="driverAttention" data-ng-model="reviews.driverAttention" value="5" />
+                        <label for="driverAttention1" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="driverAttention2" name="driverAttention" data-ng-model="reviews.driverAttention" value="4" />
+                        <label for="driverAttention2" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="driverAttention3" name="driverAttention" data-ng-model="reviews.driverAttention" value="3" />
+                        <label for="driverAttention3" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="driverAttention4" name="driverAttention" data-ng-model="reviews.driverAttention" value="2" />
+                        <label for="driverAttention4" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="driverAttention5" name="driverAttention" data-ng-model="reviews.driverAttention" value="1" />
+                        <label for="driverAttention5" class="rating-star"></label>
+                    </div>
+                    -->
+                    <div class="pull-right">
+                        <input type="radio" name="driverTreat" data-ng-model="calification.driverTreat" value="5" />
+                        <input type="radio" name="driverTreat" data-ng-model="calification.driverTreat" value="4" />
+                        <input type="radio" name="driverTreat" data-ng-model="calification.driverTreat" value="3" />
+                        <input type="radio" name="driverTreat" data-ng-model="calification.driverTreat" value="2" />
+                        <input type="radio" name="driverTreat" data-ng-model="calification.driverTreat" value="1" />
+                    </div>
+                    Trato del conductor
+
+                </div>
+                <div class="item">
+                    <!--
+                    <div class="input-label">
+                        Limpieza del vehiculo
+                    </div>
+                    <span class="rating">
+                        <input type="radio" class="rating-input" id="vehicleClean1" name="vehicleClean" data-ng-model="reviews.vehicleClean" value="5" />
+                        <label for="vehicleClean1" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="vehicleClean2" name="vehicleClean" data-ng-model="reviews.vehicleClean" value="4" />
+                        <label for="vehicleClean2" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="vehicleClean3" name="vehicleClean" data-ng-model="reviews.vehicleClean" value="3" />
+                        <label for="vehicleClean3" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="vehicleClean4" name="vehicleClean" data-ng-model="reviews.vehicleClean" value="2" />
+                        <label for="vehicleClean4" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="vehicleClean5" name="vehicleClean" data-ng-model="reviews.vehicleClean" value="1" />
+                        <label for="vehicleClean5" class="rating-star"></label>
+                    </span>
+                    -->
+                    <div class="pull-right">
+                        <input type="radio" name="vehicleClean" data-ng-model="calification.vehicleClean" value="5" />
+                        <input type="radio" name="vehicleClean" data-ng-model="calification.vehicleClean" value="4" />
+                        <input type="radio" name="vehicleClean" data-ng-model="calification.vehicleClean" value="3" />
+                        <input type="radio" name="vehicleClean" data-ng-model="calification.vehicleClean" value="2" />
+                        <input type="radio" name="vehicleClean" data-ng-model="calification.vehicleClean" value="1" />
+                    </div>
+                    Limpieza del vehiculo
+
+                </div>
+                <div class="item">
+                    <!--
+                    <div class="input-label">
+                        Buena presencia
+                    </div>
+                    <span class="rating">
+                        <input type="radio" class="rating-input" id="goodPresence1" name="goodPresence" data-ng-model="reviews.goodPresence" value="5" />
+                        <label for="goodPresence1" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="goodPresence2" name="goodPresence" data-ng-model="reviews.goodPresence" value="4" />
+                        <label for="goodPresence2" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="goodPresence3" name="goodPresence" data-ng-model="reviews.goodPresence" value="3" />
+                        <label for="goodPresence3" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="goodPresence4" name="goodPresence" data-ng-model="reviews.goodPresence" value="2" />
+                        <label for="goodPresence4" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="goodPresence5" name="goodPresence" data-ng-model="reviews.goodPresence" value="1" />
+                        <label for="goodPresence5" class="rating-star"></label>
+                    </span>
+                    -->
+                    <div class="pull-right">
+                        <input type="radio" name="goodPresence" data-ng-model="calification.goodPresence" value="5" />
+                        <input type="radio" name="goodPresence" data-ng-model="calification.goodPresence" value="4" />
+                        <input type="radio" name="goodPresence" data-ng-model="calification.goodPresence" value="3" />
+                        <input type="radio" name="goodPresence" data-ng-model="calification.goodPresence" value="2" />
+                        <input type="radio" name="goodPresence" data-ng-model="calification.goodPresence" value="1" />
+                    </div>
+                    Buena presencia
+                </div>
+                <div class="item item-toggle">
+                    Recomendaria este conductor
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" data-ng-model="calification.recommended" />
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
+                <button type="submit" class="button button-block button-dark">Aceptar</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

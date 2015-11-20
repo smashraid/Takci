@@ -1,0 +1,38 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Edit</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form data-ng-init="init();" data-ng-submit="submit()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Nombre</span>
+                    <input type="text" name="firstname" data-ng-model="friend.Firstname" required="required" maxlength="50" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Apellido</span>
+                    <input type="text" name="lastname" data-ng-model="friend.Lastname" required="required" maxlength="50" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Documento</span>
+                    <input type="text" name="documento" data-ng-model="friend.Document" required="required" maxlength="8" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Fecha de Nacimiento</span>
+                    <input type="date" name="birthday" data-ng-model="friend.Birthday" required="required" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Correo</span>
+                    <input type="email" name="email" data-ng-model="friend.Email" required="required" maxlength="50" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Telefono</span>
+                    <input type="tel" name="phone" data-ng-model="friend.Phone" required="required" maxlength="15" />
+                </label>
+            </div>
+            <div class="padding">
+                <button type="submit" class="button button-block button-dark">Aceptar</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

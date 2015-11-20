@@ -1,0 +1,42 @@
+<ion-view view-title="Iniciar Sesion">
+    <ion-content class="padding">
+        <form data-ng-submit="submit()">
+            <div class="item" ng-show="error">
+                <span data-ng-bind-html="error" class="error"></span>                
+            </div>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Usuario</span>
+                    <input type="text" name="username" data-ng-model="user.Username" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Contrase&ntilde;a</span>
+                    <input type="password" name="password" data-ng-model="user.Password" />
+                </label>
+            </div>
+            <div class="padding">
+                <button type="submit" class="button button-block button-dark">Iniciar Sesion</button>
+            </div>
+            <!--
+            <div class="padding">
+                {{error2 | json}}
+            </div>
+            <div class="padding">
+                {{log | json}}
+            </div>
+            <div class="padding">
+                {{logText | json}}
+            </div>
+                -->
+        </form>
+        </div>
+        <div class="row padding">
+            <div class="col">
+                <a href="#/register">Nuevo Usuario</a>
+            </div>
+            <div class="col" style="text-align:right;">
+                <a href="#/forgot-password">Recordar Contrase&ntilde;a</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

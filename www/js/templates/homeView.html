@@ -1,0 +1,100 @@
+<ion-view view-title="Inicio">
+    <!--
+    <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+        Reorder
+      </button>
+    </ion-nav-buttons>
+    -->
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-dark" data-ng-click="exit()">
+            Salir
+        </button>        
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <h2>
+            Bienvenido
+            <span data-ng-bind="user.firstname"></span>
+            <span data-ng-bind="user.lastname"></span>            
+        </h2>
+        <div class="row">
+            <div class="col">
+                <i class="ion ion-navigate icon-large"></i>
+            </div>
+            <div class="col col-75">
+                <p>
+                    San Miguel - La Molina
+                </p>
+                <p>
+                    Surco - San Borja
+                </p>
+                <p>
+                    La Victoria - San Martin de Porres
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <i class="ion ion-information icon-large"></i>
+            </div>
+            <div class="col col-75">
+                <p>
+                    No existen promociones actualmente.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <i class="ion ion-cash icon-large"></i>
+            </div>
+            <div class="col col-75">
+                <p>
+                    Tienes 150 Takci puntos.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <i class="ion ion-chatboxes icon-large"></i>
+            </div>
+            <div class="col col-75">
+                <p>
+                    <a href="#">Precauciones al tomar un taxi</a>
+                </p>
+                <p>
+                    <a href="#">Nuevas modalidades de asalto</a>
+                </p>
+                <p>
+                    <a href="#">Credenciales para taxistas empadronados </a>
+                </p>
+            </div>
+        </div>
+        <!--
+        <p>
+          <a class="button icon icon-right ion-chevron-right" href="#/tab/facts">Scientific Facts</a>
+        </p>
+        <p>
+          <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+            <ion-item ng-repeat="item in items" item="item" href="#/item/{{item.id}}" class="item-remove-animate">
+              Item {{ item.id }}
+              <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
+              </ion-delete-button>
+              <ion-option-button class="button-assertive" ng-click="edit(item)">
+                Edit
+              </ion-option-button>
+              <ion-option-button class="button-calm" ng-click="share(item)">
+                Share
+              </ion-option-button>
+              <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+            </ion-item>
+          </ion-list>
+        </p>
+        -->
+    </ion-content>
+</ion-view>

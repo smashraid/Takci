@@ -1,14 +1,14 @@
 /* Empty. Add your own CSS if you like */
 
-#map {
+#map-canvas {
   width: 100%;
   height: 100%;
 }
-#map-canvas {
+#map-canvas1 {
   width: 100%;
   height: 400px;
-  margin: 0px;
-  padding: 0px
+  margin: 0;
+  padding: 0
 }
 .scroll {
   height: 100%;
@@ -55,6 +55,32 @@
     display: block;
     width: 16px;
     height: 16px;
-    background: url('/img/star.png') 0 -16px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgCAYAAAAbifjMAAAC/0lEQVR42o3SPWgTcRzG8V9ppSpdWhVESpeqHbpYQUGpLzgo1VGdBF3cRHSTDuIgOogvSxF1qWJBmjTvMW2as0nfzMsluaSNbdM0sShSiG/RIHRpHx8KJ4nkjg6fu+Of7wMHOdE8Z8zsok6zRjT3KSMNFKQ87TDqRHMdNfKkEOrB8sQ58NlP9bU6SToO1HI5pxzDr5nzKGcuIj92Ajx7UKuVpG1vpRa6Tn+K0ZMoz/RsKGmnwbN1ukdtlRtJWnbW01my0Gre345vkYMoa0eq/FQPYVnZDzZrFKBLtE0Sb6R/3rUdX4K7UYq143d8nyk2WBnfg6ynCdyqkngtrVQqhhrwO9K0adysU7fE+0Xo6qJN8Gtqc5YcAm76iOMXG+pIWbYzCJpbeStgW6AmElH7/ulIPReU/ObmXwrYXtB3Env0z1b1seCn21y6T8D2MAnxcr/K2vdBhlZjqYcCdp36RqJ3qpS+vhIQPj0TLPCN5jhYfioo8tV/DAgSdwXs2kiIl1tVPqfvCHgvk5Ou0RUaoKJ2W6D2bvzerG8kcrPKDTpOW0j+U0dd1EuN+jkvxhRF2UWdJg2jQMBIAwUpTzuMOgmMjhp5EotGEVdV8NlP9bU6GfWP1HI5/H4a+aUcPhbyiEbC4NmDWq34R3yVWug6/fmQmUEhn9uQW1wAz9bpHrVVbmTE562ns2Sh1fD0JOY4zueyVbLzHxCLvAebNQrQJdomw153//iYAi0ewyKjpey8KTZIJ+OYDI2BW1V8HkcrlWZTceQWMpvGzTp1i9dlF7o6EVSQnZvdlKnxMXDTRyIex5BQHSnhyRAWMmlTyVgYbAvURCIuu1XX4fM4MTebMvVudBhsL+g7cdgsuq1OuxWZGc2Uz+sC28P6TuxDg5XW0locs+mkIa/bAXad+kaGrIOVSsmECsL01AQ/4RHwY8HkRAgJ/s3pVBJOhw3s2vSNWC2DlT573C7wXiYnXaMrNEBFl9MB25AVfG7WN2KxWCrdoOO0heQ/ddRFvdSon/8FtojSCy1LW/wAAAAASUVORK5CYII=') /*/img/star.png*/ 0 -16px;
     /*http://kubyshkin.ru/samples/star-rating/star.png*/
+}
+
+.map-button1 { 
+  position : absolute;  
+  margin-left:5px;
+  bottom:30px;
+}
+.map-button2 { 
+  position : absolute;  
+  margin-left:5px;
+  bottom:85px;
+}
+.map-button3 { 
+  position : absolute;  
+  margin-left:5px;
+  bottom:140px;
+}
+.map-button4 { 
+  position : absolute;  
+  margin-left:5px;
+  bottom:195px;
+}
+.map-button5 { 
+  position : absolute;  
+  margin-left:5px;
+  bottom:250px;
 }
